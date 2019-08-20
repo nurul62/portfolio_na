@@ -4,7 +4,7 @@ class TodoApp extends Component {
     render = () => {
         return (
             <div>
-                <h1> My to do</h1>
+                <h1>Welcome to portfolio</h1>
                 <Login />
             </div>
         )
