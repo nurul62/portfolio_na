@@ -57,8 +57,10 @@ class Login extends Component {
                 Username: <input type="text" name="username" value={this.state.username} onChange={this.handleChange} /><br/>
                 Password: <input type="password" name="password" value={this.state.password} onChange ={this.handleChange} /><br/>
                 <button onClick={this.handleLogin}>Login</button>
-                <ShowSuccessMessage showLoginSuccess={this.state.showLoginSuccess} />
-                <ShowFailMessage showLoginFail={this.state.showLoginFail} />
+                {this.state.showLoginSuccess && <div>Login successful</div>}
+                {this.state.showLoginFail && <div>Invalid credentials, please try again!</div>}
+                {/*<ShowSuccessMessage showLoginSuccess={this.state.showLoginSuccess} />*/}
+                {/*<ShowFailMessage showLoginFail={this.state.showLoginFail} />*/}
             </div>
         )
     }
@@ -66,23 +68,23 @@ class Login extends Component {
 }
 
 
-function ShowSuccessMessage (props)  {
-    if(props.showLoginSuccess) {
-        return (
-            <div>Login successful.</div>
-        )
-    } else
-        return null;
-}
-function ShowFailMessage (props)  {
-    if(props.showLoginFail) {
-        return (
-            <div>Invalid login credentials, please try again!</div>
-        )
-    } else {
-        return null;
-    }
-}
+// function ShowSuccessMessage (props)  {
+//     if(props.showLoginSuccess) {
+//         return (
+//             <div>Login successful.</div>
+//         )
+//     } else
+//         return null;
+// }
+// function ShowFailMessage (props)  {
+//     if(props.showLoginFail) {
+//         return (
+//             <div>Invalid login credentials, please try again!</div>
+//         )
+//     } else {
+//         return null;
+//     }
+// }
 
 
 
