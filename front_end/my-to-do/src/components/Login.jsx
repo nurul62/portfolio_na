@@ -5,8 +5,8 @@ class Login extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "nurul",
-            password: "nurul",
+            username: "",
+            password: "",
             showLoginSuccess: false,
             showLoginFail: false
         }
@@ -33,13 +33,14 @@ class Login extends Component {
     handleLogin = () => {
         console.log(this.state);
         if(this.state.username === "nurul" && this.state.password === "nurul") {
-           console.log("Login success");
-           this.setState(
-               {
-                        showLoginSuccess: true,
-                        showLoginFail: false
-                    }
-               )
+           //console.log("Login success");
+            this.props.history.push("/welcome")
+           // this.setState(
+           //     {
+           //              //showLoginSuccess: true,
+           //              //showLoginFail: false
+           //          }
+           //     )
         } else {
             this.setState({
                 showLoginSuccess: false,

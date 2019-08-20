@@ -1,11 +1,26 @@
-import React, {Component} from "react"
+import React, {Component} from "react";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Login from "./Login";
+import WelcomePage from "./WelcomePage";
+import ErrorComponent from "./ErrorComponent";
 class TodoApp extends Component {
     render = () => {
         return (
             <div>
-                <h1>Welcome to portfolio</h1>
-                <Login />
+
+                    <Router>
+                        <>
+                            <Switch>
+                                {/* <WelcomePage />
+                                <Login />*/}
+                                <Route path = "/" exact component={Login} />
+                                <Route path = "/login" component={Login} />
+                                <Route path = "/welcome" component={WelcomePage} />
+                                <Route component={ErrorComponent} />
+                            </Switch>
+                        </>
+                    </Router>
+
             </div>
         )
     }
